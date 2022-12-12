@@ -57,9 +57,9 @@
 }
 
 .list-item div:nth-child(1) {
-    width: 15%;
+    width: 10%;
     /* height: 150px; */
-    /* background-image: url(./upload/20221212112126.jpg); */
+    /* background-color: #fff; */
     /* background-size: cover; */
 }
 
@@ -67,7 +67,7 @@
     /* width: 150px; */
     width: 100%;
     height: 100px;
-    object-fit: cover center;
+    object-fit: cover center ;
 }
 
 .list-item div:nth-child(2) {
@@ -79,7 +79,7 @@
 }
 
 .list-item div:nth-child(4) {
-    width: 5%;
+    width: 10%;
 }
 
 .list-item div:nth-child(5) {

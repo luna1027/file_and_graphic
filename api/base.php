@@ -100,13 +100,13 @@ function update($table, $set, ...$args)
                 // dd($args[0]);
             }
             $sql = $sql . " WHERE " . join(" AND ", $tmp);
-        } 
+        }
         // elseif (is_numeric($args[0])) {
         //     $sql = $sql . " LIMIT " . $args[0];
         // } 
         else {
             // 是字串
-            $sql=$sql . " WHERE `id`='{$args[0]}'";
+            $sql = $sql . " WHERE `id`='{$args[0]}'";
         }
     }
     // echo "請打清楚點";
@@ -149,7 +149,7 @@ function del($table, ...$args)
                 $tmp[] = "`$key`='$value'";
             }
             $sql = $sql . " WHERE " . join(" AND ", $tmp);
-        } 
+        }
         // elseif (is_numeric($args[0])) {
         //     print_r($args[0]);
         //     $sql = $sql . " LIMIT " . $args[0];
@@ -176,4 +176,46 @@ function q($sql)
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
+
+// 是否為圖片檔
+function is_image($type)
+{
+    switch ($type) {
+        case 'image/jpeg':
+        case 'image/gif':
+        case 'image/png':
+        case 'image/bmp':
+        case 'image/apng':
+        case 'image/avif':
+        case 'image/svg+sml':
+        case 'image/webp':
+            return true;
+            break;
+        default:
+            return false;
+            break;
+    }
+}
+
+// 其他檔
+function dummy_icon($type)
+{
+    switch ($type) {
+        case 'text/plain':
+            return 'file-txt.png';
+            break;
+        case 'application/mspowerpoint':
+            return 'file-ppt.png';
+            break;
+        case 'application/msword':
+            return 'file-doc.png';
+            break;
+        case 'application/postscript':
+            return 'file-ai.png';
+            break;
+        default:
+            return 'file-regular.jpg';
+            break;
+    }
+}
 ?>
