@@ -26,8 +26,20 @@ include_once "./api/base.php";
     <h1 class="header">檔案上傳練習</h1>
     <!----建立你的表單及設定編碼----->
     <?php
-    if (isset($_GET['upload']) && $_GET['upload'] == 'success') {
-        echo "<div class='status success'>上傳成功</div>";
+    if (isset($_GET['status'])) {
+        switch ($_GET['status']) {
+            case 'upload_success':
+                echo "<div class='status'>上傳成功</div>";
+                break;
+            case 'edit_success':
+                echo "<div class='status'>編輯成功</div>";
+                break;
+            case 'del_success':
+                echo "<div class='status'>刪除成功</div>";
+                break;
+            default:
+                break;
+        }
     }
 
     ?>
@@ -36,7 +48,7 @@ include_once "./api/base.php";
             <li>
                 Description : <input type="textarea" name="description">
                 <input type="file" name="file_name">
-            <li><input type="submit" value="Submit"></li>
+                <input type="submit" value="Submit">
             </li>
         </ul>
     </form>
@@ -52,6 +64,7 @@ include_once "./api/base.php";
         echo "<div>名稱</div>";
         echo "<div>大小</div>";
         echo "<div>類型</div>";
+        echo "<div></div>";
         echo "</li>";
         foreach ($files as $file) {
             echo "<li class='list-item list-item-hover'>";
@@ -71,10 +84,14 @@ include_once "./api/base.php";
             echo $file['file_name'];
             echo "</div>";
             echo "<div>";
-            echo floor($file['size']/1024)."kb";
+            echo floor($file['size'] / 1024) . "kb";
             echo "</div>";
             echo "<div>";
             echo $file['type'];
+            echo "</div>";
+            echo "<div>";
+            echo "<a class='edit_btn' href='./edit_form.php?id={$file['id']}'>EDIT</a>";
+            echo "<a class='del_btn' href='./api/del.php?id={$file['id']}'>DEL</a>";
             echo "</div>";
             echo "</li>";
         }

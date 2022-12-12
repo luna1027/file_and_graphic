@@ -1,11 +1,39 @@
-.status{
+.status {
     display: flex;
     /* justify-content: center; */
-    margin: auto;
-}
-
-.success{
     font-size: larger;
     color: rgb(48, 185, 48);
     font-weight: bolder;
+    margin: auto;
+}
+
+.edit_btn {
+    /* display: flex; */
+    border: 1px ;
+    border-radius: 5px;
+    background-color: lightskyblue;
+    color: darkblue;
+    font-weight: bold;
+    padding: 5px 7px;
+    margin-right: 5px;
+}
+
+.edit_btn:hover{
+    background-color: azure;
+    color: skyblue;
+}
+
+.del_btn {
+    /* display: flex; */
+    border: 1px ;
+    border-radius: 5px;
+    background-color:crimson;
+    color: aliceblue;
+    padding: 5px 7px;
+    margin-right: 5px;
+}
+
+.del_btn:hover{
+    background-color: azure;
+    color: crimson;
 }

@@ -27,7 +27,7 @@ if ($_FILES['file_name']['error'] == 0) {
         'file_name' => $file_name
     ]);
 
-    header("location:../upload.php?upload=success");
+    header("location:../upload.php?status=upload_success");
 } else {
     echo "<div style='color:red;'>上傳失敗，請檢查檔案格式是否正確，及網路連線是否穩定，若狀況無法解決請聯繫網站管理員，謝謝。</div>";
 }
