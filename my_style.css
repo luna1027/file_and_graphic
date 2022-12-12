@@ -1,0 +1,15 @@
+.status{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.success{
+    font-size: larger;
+    color: forestgreen;
+    font-weight: bolder;
+}
+
+form{
+/* text-align: center; */
+}

@@ -15,14 +15,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>檔案上傳</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./my_style.css">
 </head>
 <body>
  <h1 class="header">檔案上傳練習</h1>
  <!----建立你的表單及設定編碼----->
+<?php
+if(isset($_GET['upload'])&&$_GET['upload']=='success'){
+    echo "<div class='status success'>上傳成功</div>";
+}
 
-<form action="" method="post" enctype="multipart/form-data">
-    <input type="file" name="img"><br>
-
+?>
+<form action="./api/upload.php" method="post" enctype="multipart/form-data">
+    <ul>
+        <li>Description:<input type="textarea" name="description"></li>
+        <li>File:<input type="file" name="file_name"></li>
+        <li><input type="submit" value="Submit"></li>
+    </ul>
 </form>
 
 
