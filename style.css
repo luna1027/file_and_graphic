@@ -64,8 +64,9 @@
 }
 
 .list-item div:nth-child(1) img {
-    width: 200px;
-    height: 150px;
+    /* width: 150px; */
+    width: 100%;
+    height: 100px;
     object-fit: cover center;
 }
 
@@ -85,7 +86,7 @@
     width: 20%;
 }
 
-.list-item-hover:hover{
-background-color: #ccc;
-color: aliceblue;
+.list-item-hover:hover {
+    background-color: #ccc;
+    color: aliceblue;
 }

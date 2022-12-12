@@ -71,7 +71,7 @@ include_once "./api/base.php";
             echo $file['file_name'];
             echo "</div>";
             echo "<div>";
-            echo $file['size'];
+            echo floor($file['size']/1024)."kb";
             echo "</div>";
             echo "<div>";
             echo $file['type'];
@@ -120,7 +120,7 @@ include_once "./api/base.php";
                 return 'file-ai.png';
                 break;
             default:
-                return false;
+                return 'file-regular.jpg';
                 break;
         }
     }
