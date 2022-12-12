@@ -1,15 +1,11 @@
 .status{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     margin: auto;
 }
 
 .success{
     font-size: larger;
-    color: forestgreen;
+    color: rgb(48, 185, 48);
     font-weight: bolder;
-}
-
-form{
-/* text-align: center; */
 }

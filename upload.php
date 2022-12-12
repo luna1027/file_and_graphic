@@ -1,4 +1,5 @@
 <?php
+
 /**
  * 1.建立表單
  * 2.建立處理檔案程式
@@ -9,6 +10,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,27 +19,31 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./my_style.css">
 </head>
+
 <body>
- <h1 class="header">檔案上傳練習</h1>
- <!----建立你的表單及設定編碼----->
-<?php
-if(isset($_GET['upload'])&&$_GET['upload']=='success'){
-    echo "<div class='status success'>上傳成功</div>";
-}
+    <h1 class="header">檔案上傳練習</h1>
+    <!----建立你的表單及設定編碼----->
+    <?php
+    if (isset($_GET['upload']) && $_GET['upload'] == 'success') {
+        echo "<div class='status success'>上傳成功</div>";
+    }
 
-?>
-<form action="./api/upload.php" method="post" enctype="multipart/form-data">
-    <ul>
-        <li>Description:<input type="textarea" name="description"></li>
-        <li>File:<input type="file" name="file_name"></li>
-        <li><input type="submit" value="Submit"></li>
-    </ul>
-</form>
+    ?>
+    <form action="./api/upload.php" method="post" enctype="multipart/form-data">
+        <ul>
+            <li>
+                Description : <input type="textarea" name="description">
+                <input type="file" name="file_name">
+                <input type="submit" value="Submit">
+            </li>
+        </ul>
+    </form>
 
 
 
-<!----建立一個連結來查看上傳後的圖檔---->  
+    <!----建立一個連結來查看上傳後的圖檔---->
 
 
 </body>
+
 </html>
